@@ -8,7 +8,6 @@ import {
   Typography,
   CardActions,
   Box,
-  Stack,
 } from '@mui/material';
 import {
   Comment as CommentIcon,
@@ -24,34 +23,32 @@ const FeedItem = () => {
       <CardHeader
         avatar={<Avatar src="../../assets/perfil1.png" alt="User Avatar" />}
         title="Username"
-        subheader="2h ago" 
+        subheader="2h ago" // Puedes usar una librería como `date-fns` para formatear la fecha
       />
       <CardContent>
         <Typography variant="body1">
           Contenido del comentario. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </Typography>
       </CardContent>
-      <CardActions>
-        <Stack direction="row" spacing={1} alignItems="center" justifyContent="space-between" sx={{ width: '100%' }} color="##0B6350">
-          <IconButton>
-            <CommentIcon />
-            <Typography>10</Typography>
-          </IconButton>
-          <IconButton>
-            <RepeatIcon />
-            <Typography>20</Typography>
-          </IconButton>
-          <IconButton>
-            <FavoriteIcon />
-            <Typography>30</Typography>
-          </IconButton>
-          <IconButton>
-            <DeleteIcon />
-          </IconButton>
-          <IconButton>
-            <BookmarkIcon />
-          </IconButton>
-        </Stack>
+      <CardActions disableSpacing>
+        <IconButton>
+          <CommentIcon />
+          <Typography>10</Typography>
+        </IconButton>
+        <IconButton>
+          <RepeatIcon />
+          <Typography>20</Typography>
+        </IconButton>
+        <IconButton>
+          <FavoriteIcon />
+          <Typography>30</Typography>
+        </IconButton>
+        <IconButton>
+          <DeleteIcon />
+        </IconButton>
+        <IconButton>
+          <BookmarkIcon />
+        </IconButton>
       </CardActions>
     </Card>
   );
@@ -59,7 +56,7 @@ const FeedItem = () => {
 
 const FeedItemBox = () => {
   return (
-    <Box sx={{ width: '80%', maxWidth: '884px', margin: '40px auto' }}>
+    <Box sx={{ display: 'flex', width:'100%' , maxWidth: 600, margin: '30px auto' }}>
       <FeedItem />
     </Box>
   );
