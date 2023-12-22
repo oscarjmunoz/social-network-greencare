@@ -125,19 +125,48 @@ export default function SideBar() {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Inicio', 'Notificaciones', 'Perfil', 'Noticias'].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton component={Link} to={index === 3 ? '/noticias' : '/'}>
-                <ListItemIcon>
-                  {index === 0 ? <HomeIcon /> :
-                    index === 1 ? <NotificationsIcon /> :
+          {['Inicio', 'Notificaciones', 'Perfil', 'Noticias'].map((text, index) => {
+
+           let route;
+
+            switch (index) {
+              case 0:
+                route = '/';
+                break;
+              case 1:
+                route = '/notificaciones';
+                break;
+              case 2:
+                route = '/perfil';
+                break;
+              case 3:
+                route = '/noticias';
+                break;
+              default:
+                route = '/';
+}
+            return (
+              
+              <ListItem key={text} disablePadding>
+                <ListItemButton component={Link} to={route}>
+                  <ListItemIcon>
+                    {index === 0 ? <HomeIcon /> :
+                      index === 1 ? <NotificationsIcon /> :
                       index === 2 ? <PersonIcon /> :
-                        index === 3 ? <FeedIcon /> : null}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
+                      index === 3 ? <FeedIcon /> : null
+                          }
+                  </ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItemButton>
+              </ListItem>
+            )
+          })}
+          
+          
+          
+
+
+
         </List>
         <Divider />
       </Drawer>

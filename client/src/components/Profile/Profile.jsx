@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import './style.css'  
+import SearchBar from "../Search/Search";
+import Header from "../barra_header/Header";
 
 const UserProfile = () => {
   // Estado para manejar la edición de datos
@@ -48,6 +51,9 @@ const UserProfile = () => {
   };
 
   return (
+    <div>
+    <SearchBar />
+    <Header />
     <div className="perfil">
       <div className="perfil-header">
         <div className='perfil-header-2'>
@@ -108,6 +114,7 @@ const UserProfile = () => {
             </div>
 
         </div>
+      </div>
       </div>
   );
 };
