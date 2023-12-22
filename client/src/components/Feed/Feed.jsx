@@ -1,4 +1,5 @@
-import React from 'react';
+import {useState}from 'react';
+
 import {
   Card,
   CardContent,
@@ -18,7 +19,17 @@ import {
   Bookmark as BookmarkIcon,
 } from '@mui/icons-material';
 
-const FeedItem = () => {
+  const FeedItem = () => {
+  const [like, setLike] = useState(false);
+  const colorLike = like ? '#0B6350' : '##fb0061';
+  const favorite =() => {
+    if (like) {
+      setLike(false);
+    } else {
+      setLike(true);
+    }
+  }
+
   return (
     <Card>
       <CardHeader
@@ -56,6 +67,8 @@ const FeedItem = () => {
     </Card>
   );
 };
+
+
 
 const FeedItemBox = () => {
   return (
