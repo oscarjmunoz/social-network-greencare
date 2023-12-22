@@ -1,12 +1,12 @@
 
 import Sidebar from '../components/Sidebar/Sidebar'; 
-import Feed from '../components/Feed/Feed';
+import Feed2 from '../components/Feed/Fedd2';
 import Search from '../components/Search/Search';
 import Header from '../components/barra_header/Header';
 import Comment from '../components/Comment/Comment';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import theme from '../components/Theme/Theme'; // Importa tu tema personalizado
+import theme from '../components/Theme/Theme'; 
 
 
 
@@ -21,7 +21,7 @@ function Home() {
       <Search />  
       <Header />
       <Comment /> 
-      <Feed />
+      <Feed2 />
     </ThemeProvider>
 
     </div>
